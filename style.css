@@ -798,60 +798,59 @@ footer + footer {
 .btn-primary:hover .icon-arrow {
     transform: translateX(4px);
 }
-/* Mobile Responsive Fixes */
+/* Mobile Responsive Complete Overhaul */
 @media screen and (max-width: 768px) {
-    /* Navbar text shrink and wrap fix */
-    nav, .navbar, header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px !important;
-    }
-
-    nav a, .nav-link {
-        font-size: 14px !important;
-        margin-right: 10px !important;
-    }
-
-    /* Hero Heading Font Size Adjustment */
-    h1, .hero-title {
-        font-size: 28px !important;
-        line-height: 1.2 !important;
-    }
-
-    /* Paragraph Fix */
-    p {
-        font-size: 14px !important;
-        line-height: 1.5 !important;
-    }
-
-    /* Metrics / Stats Grid Fix */
-    .container[style*="grid-template-columns"] {
-        grid-template-columns: repeat(2, 1fr) !important; /* 4 columns ko 2x2 me divide kar dega */
-        gap: 25px 10px !important;
-    }
-}/* Mobile Screen Adjustment */
-@media screen and (max-width: 768px) {
-  /* Fix Navigation Overlap */
-  header, nav {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 10px !important;
+  
+  /* 1. Header & Navigation Fix */
+  header, nav, .navbar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  nav a {
-    font-size: 14px !important;
-    display: inline-block !important;
-    margin-right: 8px !important;
+  /* Navigation Links Wrapper */
+  .nav-links, nav div, nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px 12px !important;
+    margin-top: 8px !important;
   }
 
-  /* Fix Big Headline Text */
-  h1 {
-    font-size: 26px !important;
-    line-height: 1.2 !important;
-    word-break: break-word !important;
+  nav a, .nav-link {
+    font-size: 13px !important;
+    padding: 2px 4px !important;
+    white-space: nowrap !important;
   }
 
+  /* Partner Button Fix */
+  .btn, button, a[class*="btn"] {
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+    margin-top: 5px !important;
+  }
+
+  /* 2. Hero & Sub-headings Font Scale Fix */
+  h1, h2, .hero-title, .section-title {
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    word-break: normal !important;
+    hyphens: auto !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Paragraph Text */
   p {
-    font-size: 14px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Image Containers adjustment */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
