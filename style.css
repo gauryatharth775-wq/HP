@@ -854,3 +854,17 @@ footer + footer {
     height: auto !important;
   }
 }
+@media (max-width: 768px) {
+  /* Force Heading Sizes on Mobile */
+  h1, h2, h3, .main-heading {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Navigation Fix */
+  nav, .nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    font-size: 12px !important;
+  }
+}
