@@ -640,7 +640,6 @@ footer + footer {
     transform: translateX(4px);
 }
 
-
 /* ==========================================================================
    TABLET RESPONSIVENESS (MAX-WIDTH: 992PX)
    ========================================================================== */
@@ -683,13 +682,11 @@ footer + footer {
     }
 }
 
-
 /* ==========================================================================
-   ULTIMATE MOBILE RESPONSIVE OVERHAUL (MAX-WIDTH: 768PX & 640PX)
+   CLEAN MOBILE RESPONSIVE FIX (MAX-WIDTH: 768PX)
    ========================================================================== */
 @media screen and (max-width: 768px) {
 
-    /* Global Horizontal Scroll & Box Sizing Prevention */
     html, body {
         width: 100% !important;
         max-width: 100vw !important;
@@ -701,7 +698,7 @@ footer + footer {
         width: 100% !important;
     }
 
-    /* 1. Header & Navbar Alignment */
+    /* Navbar */
     .navbar {
         flex-direction: column !important;
         align-items: center !important;
@@ -735,7 +732,7 @@ footer + footer {
         margin-top: 5px !important;
     }
 
-    /* 2. Hero Section Typography */
+    /* Hero Section */
     .hero {
         padding: 40px 0 !important;
     }
@@ -758,30 +755,26 @@ footer + footer {
         font-size: 14px !important;
     }
 
-    /* 3. Cards & Grid Layout Fix (Forces ALL 3 Cards to Stack Vertically) */
+    /* Main Content Cards Fix */
     .services-grid, 
-    .cards-container, 
-    .grid-container, 
     .features-grid,
-    div[class*="grid"], 
-    div[class*="cards"] {
-        grid-template-columns: 1fr !important;
+    .service-detail-section {
         display: flex !important;
         flex-direction: column !important;
+        align-items: center !important;
         gap: 20px !important;
         width: 100% !important;
     }
 
     .service-card, 
-    .detail-card, 
-    .card, 
     .feature-card, 
-    div[class*="card"] {
-        grid-template-columns: 1fr !important;
+    .detail-card {
         width: 100% !important;
         max-width: 100% !important;
+        min-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 24px 20px !important;
         display: block !important;
-        padding: 15px !important;
     }
 
     .detail-card img, .service-img img {
@@ -789,7 +782,20 @@ footer + footer {
         width: 100% !important;
     }
 
-    /* Zigzag Row Mobile Stack */
+    /* Client Logos (2 Column Grid) */
+    .clients-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .client-logo-card {
+        height: 80px !important;
+        padding: 10px !important;
+    }
+
+    /* Zigzag Row */
     .zigzag-row, 
     .zigzag-row.reverse-row {
         flex-direction: column !important;
@@ -800,23 +806,7 @@ footer + footer {
         width: 100% !important;
     }
 
-    /* 4. Contact Form Mobile Overflow & Alignment Fix */
-    form, .contact-form, div[class*="form"] {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important;
-        width: 100% !important;
-    }
-
-    /* Fixes Corporate Email side-by-side cutoff issue */
-    input, select, textarea, .form-control {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        font-size: 14px !important;
-    }
-
-    /* 5. Clean White Footer Mobile Structure */
+    /* Footer */
     .footer-grid {
         grid-template-columns: 1fr !important;
         gap: 30px !important;
@@ -836,81 +826,5 @@ footer + footer {
     .footer-flex {
         flex-direction: column !important;
         gap: 15px !important;
-    }
-}
-
-@media (max-width: 640px) {
-    .clients-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
-    }
-
-    .client-logo-card {
-        height: 80px !important;
-        padding: 10px !important;
-    }
-
-    .solutions-menu a {
-        padding: 8px 12px !important;
-        font-size: 12px !important;
-    }
-    @media screen and (max-width: 768px) {
-    /* Target cards container to stack vertically */
-    .services-grid, 
-    .features-grid,
-    div[class*="grid"],
-    div[class*="cards"] {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 20px !important;
-    }
-
- /* ==========================================================================
-   TARGETED CARD FIX (ONLY FOR CONTENT CARDS & WHY CHOOSE US)
-   ========================================================================== */
-@media screen and (max-width: 768px) {
-
-    /* 1. Target specific card containers without touching client logos or footer */
-    .services-grid,
-    .features-grid,
-    .service-detail-section {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 20px !important;
-        width: 100% !important;
-    }
-
-    /* 2. Make content cards full width and well-padded */
-    .service-card,
-    .feature-card,
-    .detail-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 100% !important;
-        box-sizing: border-box !important;
-        padding: 24px 20px !important;
-    }
-
-    /* 3. Restore Client Logos to a clean 2-column grid */
-    .clients-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
-        width: 100% !important;
-    }
-
-    .client-logo-card {
-        height: 80px !important;
-        padding: 10px !important;
-    }
-
-    /* 4. Restore Contact Form Row Layout */
-    .contact-form .form-row,
-    form .form-row {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 10px !important;
     }
 }
