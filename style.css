@@ -866,19 +866,51 @@ footer + footer {
         gap: 20px !important;
     }
 
-    /* Make cards take full available width */
-    .service-card, 
-    .feature-card, 
-    div[class*="card"] {
+ /* ==========================================================================
+   TARGETED CARD FIX (ONLY FOR CONTENT CARDS & WHY CHOOSE US)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+
+    /* 1. Target specific card containers without touching client logos or footer */
+    .services-grid,
+    .features-grid,
+    .service-detail-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    /* 2. Make content cards full width and well-padded */
+    .service-card,
+    .feature-card,
+    .detail-card {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 100% !important;
         box-sizing: border-box !important;
         padding: 24px 20px !important;
     }
-}
 
-    .visual-img {
-        height: 180px !important;
+    /* 3. Restore Client Logos to a clean 2-column grid */
+    .clients-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .client-logo-card {
+        height: 80px !important;
+        padding: 10px !important;
+    }
+
+    /* 4. Restore Contact Form Row Layout */
+    .contact-form .form-row,
+    form .form-row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
     }
 }
