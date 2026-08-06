@@ -673,13 +673,17 @@ footer + footer {
     .solution-block:nth-child(even) .solution-grid > *:first-child {
         order: 2;
     }
+    .solutions-nav-bar {
+        top: 0;
+        padding: 10px 0;
+    }
     .feature-checklist {
         grid-template-columns: 1fr !important;
     }
 }
 
 /* ==========================================================================
-   MOBILE RESPONSIVE OVERHAUL (MAX-WIDTH: 768PX)
+   CLEAN MOBILE RESPONSIVE FIX (MAX-WIDTH: 768PX)
    ========================================================================== */
 @media screen and (max-width: 768px) {
 
@@ -690,7 +694,7 @@ footer + footer {
     }
 
     .container {
-        padding: 0 16px !important;
+        padding: 0 15px !important;
         width: 100% !important;
     }
 
@@ -728,30 +732,20 @@ footer + footer {
         margin-top: 5px !important;
     }
 
-    /* Pic 2 Fix: Hero / About Mission Section */
+    /* Hero Section */
     .hero {
-        padding: 30px 0 !important;
+        padding: 40px 0 !important;
     }
 
-    .hero-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 20px !important;
-    }
-
-    .hero-text h1, h1 {
-        font-size: 28px !important;
-        line-height: 1.3 !important;
+    .hero-text h1 {
+        font-size: 26px !important;
+        line-height: 1.25 !important;
         margin-bottom: 12px !important;
-        letter-spacing: normal !important;
-        word-break: normal !important;
     }
 
     .hero-buttons {
         flex-direction: column !important;
         gap: 10px !important;
-        width: 100% !important;
     }
 
     .btn-primary, .btn-secondary, .btn-secondary-graphic {
@@ -761,20 +755,10 @@ footer + footer {
         font-size: 14px !important;
     }
 
-    .hero-image img, .zigzag-row img {
-        width: 100% !important;
-        height: auto !important;
-        max-height: 250px !important;
-        margin-top: 15px !important;
-    }
-
-    /* Pic 1 & Pic 5 Fix: Cards Vertical Stack (Full Width) */
+    /* Main Content Cards Fix */
     .services-grid, 
     .features-grid,
-    .service-detail-section,
-    .why-us-grid,
-    div[class*="grid"],
-    div[class*="cards"] {
+    .service-detail-section {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -784,15 +768,13 @@ footer + footer {
 
     .service-card, 
     .feature-card, 
-    .detail-card,
-    div[class*="card"] {
+    .detail-card {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 100% !important;
         box-sizing: border-box !important;
         padding: 24px 20px !important;
         display: block !important;
-        margin: 0 !important;
     }
 
     .detail-card img, .service-img img {
@@ -800,43 +782,7 @@ footer + footer {
         width: 100% !important;
     }
 
-    /* Pic 3 Fix: Hide Side Scroll Pills Menu on Mobile */
-    .solutions-nav-bar,
-    .solutions-menu,
-    div[class*="solutions-nav"],
-    div[class*="pills"] {
-        display: none !important;
-    }
-
-    /* Pic 4 Fix: Contact Form Spacing & Input Stack */
-    .contact-form,
-    form,
-    div[class*="form"] {
-        margin-top: 30px !important;
-        padding-top: 10px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 16px !important;
-        width: 100% !important;
-    }
-
-    .contact-form .form-row,
-    form .form-row,
-    div[class*="form-row"] {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 16px !important;
-        width: 100% !important;
-    }
-
-    input, select, textarea, .form-control {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        font-size: 14px !important;
-    }
-
-    /* Client Logos (Clean 2 Column Grid) */
+    /* Client Logos (2 Column Grid) */
     .clients-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
@@ -847,11 +793,9 @@ footer + footer {
     .client-logo-card {
         height: 80px !important;
         padding: 10px !important;
-        width: 100% !important;
-        min-width: unset !important;
     }
 
-    /* Zigzag Row Stack */
+    /* Zigzag Row */
     .zigzag-row, 
     .zigzag-row.reverse-row {
         flex-direction: column !important;
@@ -862,7 +806,7 @@ footer + footer {
         width: 100% !important;
     }
 
-    /* Footer Clean Up */
+    /* Footer */
     .footer-grid {
         grid-template-columns: 1fr !important;
         gap: 30px !important;
@@ -882,5 +826,67 @@ footer + footer {
     .footer-flex {
         flex-direction: column !important;
         gap: 15px !important;
+    }
+}
+/* Fix 1 & 5: Stack Cards Vertically on Mobile (Pic 1 & Pic 5) */
+@media screen and (max-width: 768px) {
+    .why-choose-us-grid,
+    .features-grid,
+    .cards-container {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .why-choose-us-card,
+    .feature-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Fix 2: Prevent Vertical Letter Break and Fix Image Layout (Pic 2) */
+@media screen and (max-width: 768px) {
+    .mission-section h1,
+    .hero-section h1 {
+        font-size: 26px !important;
+        word-break: normal !important;
+        white-space: normal !important;
+        line-height: 1.3 !important;
+    }
+
+    .mission-container,
+    .about-hero-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+    }
+}
+
+/* Fix 3: Completely Remove Side Scroll Menu Bar (Pic 3) */
+.solutions-nav,
+.horizontal-scroll-menu,
+.tech-pills-nav {
+    display: none !important;
+}
+
+/* Fix 4: Add Spacing Above Contact Form & Stack Input Fields (Pic 4) */
+@media screen and (max-width: 768px) {
+    .contact-form-section,
+    form {
+        margin-top: 40px !important;
+        padding-top: 20px !important;
+    }
+
+    .form-row,
+    .input-group {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .form-row input {
+        width: 100% !important;
     }
 }
