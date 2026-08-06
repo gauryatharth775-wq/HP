@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Solutions & IT Services | Hatch Pros</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Solutions Deep-Dive UI Enhancements */
+        .solutions-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #165991 100%);
+            color: #ffffff;
+            padding: 90px 0 70px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: #38bdf8;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Sticky Filter / Navigation Bar */
+        .solutions-nav-bar {
+            position: sticky;
+            top: 73px; /* Sits below header */
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 900;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .solutions-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .solutions-menu a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.25s ease;
+            background: #f1f5f9;
+        }
+
+        .solutions-menu a:hover, .solutions-menu a.active-pill {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        /* Detailed Solution Block Layout */
+        .solution-block {
+            padding: 80px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .solution-block:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .solution-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .solution-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+            line-height: 1.25;
+        }
+
+        .feature-checklist {
+            list-style: none;
+            margin: 25px 0 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+        }
+
+        .feature-checklist li {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-checklist li i {
+            color: #10b981;
+            font-size: 15px;
+        }
+
+        /* Tech Visual Showcase Box */
+        .solution-card-visual {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .visual-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-pill {
+            background: #f1f5f9;
+            color: #334155;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid #cbd5e1;
+        }
+
+        @media (max-width: 992px) {
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .feature-checklist {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<!-- Interactive 3D & Scroll Animation Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Scroll Reveal Engine
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .detail-card, .client-logo-card, .contact-form, .hero-text').forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        observer.observe(el);
+    });
+
+    // 2. Interactive 3D Cursor Tilt Effect for Cards
+    const cards = document.querySelectorAll('.service-card, .detail-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - (rect.width / 2);
+            const y = e.clientY - rect.top - (rect.height / 2);
+            
+            card.style.transform = `perspective(1000px) rotateX(${-y / 15}deg) rotateY(${x / 15}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
+        });
+    });
+});
+</script>
+<body>
+
+    <!-- Shared Navigation -->
+    <header class="navbar">
+        <!-- Navbar Header Logo -->
+<a href="index.html" class="navbar-brand">
+    <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
+</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html" class="active">Solutions</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-btn">Partner With Us</a>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="solutions-hero">
+        <div class="container">
+            <span class="hero-tag"><i class="fa-solid fa-layer-group"></i> ENTERPRISE CAPABILITIES</span>
+            <h1 style="font-size: 44px; font-weight: 800; margin-bottom: 15px;">Tailored IT & Workforce Engineering</h1>
+            <p style="font-size: 18px; color: #cbd5e1; max-width: 680px; margin: 0 auto;">Enabling high-growth platforms, health systems, and enterprises to modernize legacy stacks, scale engineering pods, and secure operations.</p>
+        </div>
+    </section>
+
+    <!-- Interactive Navigation Bar -->
+    <div class="solutions-nav-bar">
+        <div class="container">
+            <ul class="solutions-menu">
+                <li><a href="#it-staffing" class="active-pill"><i class="fa-solid fa-laptop-code"></i> IT Consulting</a></li>
+                <li><a href="#healthcare-it"><i class="fa-solid fa-heart-pulse"></i> Healthcare IT</a></li>
+                <li><a href="#cybersecurity"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</a></li>
+                <li><a href="#workforce"><i class="fa-solid fa-users-gear"></i> Workforce Models</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Solution Section 1: IT Consulting & Staffing -->
+    <section id="it-staffing" class="solution-block">
+        <div class="container">
+            <div class="solution-grid">
+                <div>
+                    <span class="solution-badge"><i class="fa-solid fa-code"></i> SOFTWARE ENGINEERING & CLOUD</span>
+                    <h2 class="solution-title">IT Consulting & Enterprise Staffing</h2>
+                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Modern software delivery requires specialized talent capable of architecting resilient systems. We deliver top-tier engineering talent and full-stack consultants to accelerate product roadmaps and resolve complex tech debt.</p>
+                    
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Full-Stack & Microservices</li>
+                        <li><i class="fa-solid fa-circle-check"></i> AWS, Azure & GCP Cloud Engineers</li>
+                        <li><i class="fa-solid fa-circle-check"></i> DevOps & CI/CD Pipelines</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Data Engineering & Snowflake</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Agile Project Leadership</li>
+                        <li><i class="fa-solid fa-circle-check"></i> AI/ML Integration Specialists</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn-primary">Request Tech Talent <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+
+                <div class="solution-card-visual">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Software Engineering" class="visual-img">
+                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Core Tech Stack Deployed:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-pill">Java / Spring Boot</span>
+                        <span class="tech-pill">Node.js</span>
+                        <span class="tech-pill">React / Angular</span>
+                        <span class="tech-pill">Kubernetes</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Terraform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section 2: Healthcare IT -->
+    <section id="healthcare-it" class="solution-block">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-card-visual">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Healthcare IT Systems" class="visual-img">
+                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Supported Health Systems & Protocols:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-pill">Epic Systems</span>
+                        <span class="tech-pill">Cerner Millennium</span>
+                        <span class="tech-pill">HL7 / FHIR</span>
+                        <span class="tech-pill">HIPAA Compliance</span>
+                        <span class="tech-pill">DICOM</span>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="solution-badge"><i class="fa-solid fa-hospital-user"></i> HEALTHTECH & COMPLIANCE</span>
+                    <h2 class="solution-title">Healthcare IT & EMR Solutions</h2>
+                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">We help hospital networks, clinical software platforms, and healthtech providers modernize patient data flows, integrate EMR system updates, and ensure total regulatory compliance.</p>
+                    
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Certified Epic Implementation</li>
+                        <li><i class="fa-solid fa-circle-check"></i> EMR / EHR System Upgrades</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Interoperability & FHIR API Integration</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Clinical Workflow Optimization</li>
+                        <li><i class="fa-solid fa-circle-check"></i> HIPAA Security & Audit Compliance</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Telehealth Software Architecture</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn-primary">Consult HealthTech Team <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section 3: Cybersecurity -->
+    <section id="cybersecurity" class="solution-block">
+        <div class="container">
+            <div class="solution-grid">
+                <div>
+                    <span class="solution-badge"><i class="fa-solid fa-lock"></i> ZERO-TRUST SECURITY</span>
+                    <h2 class="solution-title">Cybersecurity & Compliance Operations</h2>
+                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Protecting corporate intellectual property and patient records in an age of rising security threats. We supply seasoned SOC analysts, penetration testers, and security architects to harden your posture.</p>
+                    
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> SOC-as-a-Service & 24/7 Monitoring</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Penetration Testing & Audits</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Zero-Trust Architecture</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Identity & Access Management (IAM)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Incident Response Planning</li>
+                        <li><i class="fa-solid fa-circle-check"></i> SOC2, ISO 27001 & NIST Standards</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn-primary">Schedule Risk Assessment <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+
+                <div class="solution-card-visual">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity Center" class="visual-img">
+                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Security Frameworks We Enforce:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-pill">Zero-Trust</span>
+                        <span class="tech-pill">CrowdStrike</span>
+                        <span class="tech-pill">Okta / IAM</span>
+                        <span class="tech-pill">NIST 800-53</span>
+                        <span class="tech-pill">Splunk / SIEM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section 4: Enterprise Workforce Models -->
+    <section id="workforce" class="solution-block">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-card-visual">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Enterprise Workforce Strategy" class="visual-img">
+                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Flexible Engagement Options:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-pill">Contingent Staffing</span>
+                        <span class="tech-pill">Contract-to-Hire</span>
+                        <span class="tech-pill">Dedicated Engineering Pods</span>
+                        <span class="tech-pill">Executive Search</span>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="solution-badge"><i class="fa-solid fa-chart-line"></i> SCALABLE TALENT MODELS</span>
+                    <h2 class="solution-title">Enterprise Workforce Solutions</h2>
+                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">From rapid resource augmentation to managed team scaling and direct-hire executive placements, we customize our recruitment pods to fit your exact budget and velocity needs.</p>
+                    
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Contract & Contingent Staffing</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Contract-to-Hire Models</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct Hire Placement</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Managed Recruitment Pods (RPO)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Automated Onboarding & Payroll</li>
+                        <li><i class="fa-solid fa-circle-check"></i> E-Verify & Visa Compliance Audits</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn-primary">Discuss Staffing Strategy <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Solution Section 5: Offshore Development & Staffing -->
+    <section id="offshore-dev" class="solution-block">
+        <div class="container">
+            <div class="solution-grid">
+                <div>
+                    <span class="solution-badge"><i class="fa-solid fa-globe"></i> GLOBAL TALENT HUBS</span>
+                    <h2 class="solution-title">Offshore Development & Staffing</h2>
+                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Scale your software development speed with dedicated offshore engineering teams, delivering high-performance tech talent at optimized operational costs.</p>
+                    
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Dedicated Engineering Pods</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 24/7 Continuous Productivity</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Seamless Time-Zone Overlap</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Full IP Protection & Audits</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Cross-border Compliance</li>
+                        <li><i class="fa-solid fa-circle-check"></i> On-Demand Team Scaling</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn-primary">Get Offshore Talent <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+
+                <div class="solution-card-visual">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Offshore Development" class="visual-img">
+                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Offshore Capabilities & Delivery:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-pill">Global Delivery</span>
+                        <span class="tech-pill">Dedicated Pods</span>
+                        <span class="tech-pill">Cost Efficiency</span>
+                        <span class="tech-pill">Agile Integration</span>
+                        <span class="tech-pill">24/7 Coverage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section 6: AI & Machine Learning Solutions -->
+    <section id="ai-ml" class="solution-block">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-card-visual">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="AI & ML Solutions" class="visual-img">
+                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">AI Frameworks Deployed:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">PyTorch</span>
+                        <span class="tech-pill">TensorFlow</span>
+                        <span class="tech-pill">OpenAI / LLMs</span>
+                        <span class="tech-pill">LangChain</span>
+                        <span class="tech-pill">Pinecone</span>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="solution-badge"><i class="fa-solid fa-brain"></i> ADVANCED AI & INTELLIGENCE</span>
+                    <h2 class="solution-title">AI & Machine Learning Solutions</h2>
+                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Empower your enterprise with custom AI workflows, predictive data analytics, Generative AI integration, and automated intelligent business execution.</p>
+                    
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Custom GenAI & LLM Integration</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Predictive Business Analytics</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Automated AI Workflow Agents</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Natural Language Processing</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Computer Vision Models</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Enterprise AI Governance</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn-primary">Explore AI Solutions <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section 7: Cloud & DevOps Engineering -->
+    <section id="cloud-devops" class="solution-block">
+        <div class="container">
+            <div class="solution-grid">
+                <div>
+                    <span class="solution-badge"><i class="fa-solid fa-cloud"></i> CLOUD & INFRASTRUCTURE</span>
+                    <h2 class="solution-title">Cloud & DevOps Engineering</h2>
+                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Seamless AWS/Azure cloud migration, CI/CD pipeline automation, and scalable infrastructure management engineered for zero downtime and security.</p>
+                    
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Cloud Migration & Modernization</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Automated CI/CD Pipelines</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Infrastructure as Code (IaC)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Container Orchestration</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 24/7 Site Reliability (SRE)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Cost Optimization (FinOps)</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn-primary">Optimize Cloud Infra <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+
+                <div class="solution-card-visual">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Cloud Infrastructure" class="visual-img">
+                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Cloud Tools & Tech Stack:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-pill">AWS</span>
+                        <span class="tech-pill">Microsoft Azure</span>
+                        <span class="tech-pill">Docker</span>
+                        <span class="tech-pill">Kubernetes</span>
+                        <span class="tech-pill">Terraform</span>
+                        <span class="tech-pill">Jenkins</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section 8: Data Engineering & Analytics -->
+    <section id="data-engineering" class="solution-block">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-card-visual">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Analytics" class="visual-img">
+                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Data Platforms We Support:</h4>
+                    <div class="tech-tags">
+                        <span class="tech-pill">Snowflake</span>
+                        <span class="tech-pill">Databricks</span>
+                        <span class="tech-pill">Apache Spark</span>
+                        <span class="tech-pill">Power BI</span>
+                        <span class="tech-pill">dbt</span>
+                        <span class="tech-pill">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="solution-badge"><i class="fa-solid fa-database"></i> BIG DATA & INSIGHTS</span>
+                    <h2 class="solution-title">Data Engineering & Analytics</h2>
+                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Architect modern data pipelines, centralized data warehouses, and real-time analytics platforms to transform raw data into actionable enterprise insights.</p>
+                    
+                    <ul class="feature-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Enterprise Data Warehousing</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Real-time ETL/ELT Pipelines</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Business Intelligence & Dashboards</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Data Governance & Quality</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Big Data Infrastructure</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Analytics Strategy</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn-primary">Build Data Pipeline <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section style="padding: 80px 0; background: #ffffff;">
+        <div class="container">
+            <div style="background: linear-gradient(135deg, #0f172a 0%, #165991 100%); color: #ffffff; padding: 60px 40px; border-radius: 24px; text-align: center;">
+                <h2 style="font-size: 34px; font-weight: 800; margin-bottom: 12px;">Ready to Accelerate Your Tech Stack?</h2>
+                <p style="font-size: 16px; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px;">Speak directly with our technical delivery directors to assess your engineering or healthcare IT requirements.</p>
+                <a href="contact.html" class="btn-primary" style="background: #ffffff !important; color: var(--primary) !important; padding: 15px 36px; font-size: 15px;">Book Consultation <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Page bottom CTA to Careers -->
+<section style="text-align: center; padding: 60px 20px; background: #ffffff;">
+    <div class="container">
+        <h2>Looking to Join Our Elite Tech Team?</h2>
+        <p style="margin: 15px 0 25px; color: var(--text-muted);">We are constantly hiring top talent for enterprise IT roles.</p>
+        <a href="careers.html" class="btn-primary">Explore Careers <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- Clean Single Footer Structure -->
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <!-- Col 1: Logo & Info -->
+        <div>
+            <a href="index.html" class="footer-logo-link">
+                <!-- Relative path '../logo.png' agar subfolder me ho, varna 'logo.png' -->
+                <img src="/images/logo.png" alt="HatchPros Logo" class="site-logo">
+            </a>
+            <p class="footer-desc">
+                Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.
+            </p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/hatchpros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Solutions</a></li>
+                <li><a href="index.html#jobs">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 3: Contact Info -->
+        <div>
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-contact-list">
+                <li><i class="fa-solid fa-phone"></i> 484-726-0232</li>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@hatchpros.net">info@hatchpros.net</a></li>
+                <li><i class="fa-solid fa-location-dot"></i> Easton, PA</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Employer.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatch Pros | Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Interactive 3D & Scroll Animation Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Scroll Reveal Engine
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .detail-card, .client-logo-card, .contact-form, .hero-text').forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        observer.observe(el);
+    });
+
+    // 2. Interactive 3D Cursor Tilt Effect for Cards
+    const cards = document.querySelectorAll('.service-card, .detail-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - (rect.width / 2);
+            const y = e.clientY - rect.top - (rect.height / 2);
+            
+            card.style.transform = `perspective(1000px) rotateX(${-y / 15}deg) rotateY(${x / 15}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
+        });
+    });
+});
+</script>
+<body>
+
+    <!-- Shared Navigation -->
+    <header class="navbar">
+        <!-- Navbar Header Logo -->
+        <a href="index.html" class="navbar-brand">
+            <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Solutions</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-btn">Partner With Us</a>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Contact Our Corporate Team</h1>
+            <p>Let's discuss how Hatch Pros can scale your enterprise tech infrastructure.</p>
+        </div>
+    </div>
+
+    <section class="container" style="padding: 60px 20px;">
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" style="max-width: 650px; margin: 0 auto;">
+            <input type="hidden" name="access_key" value="f12160ae-72b0-4f01-8a3a-3145614e47a4">
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <input type="text" name="name" placeholder="Full Name" required style="padding:15px; border-radius:8px; border:1px solid #ccc;">
+                <input type="email" name="email" placeholder="Corporate Email" required style="padding:15px; border-radius:8px; border:1px solid #ccc;">
+            </div>
+
+            <select name="service" required style="padding:15px; border-radius:8px; border:1px solid #ccc; margin-top: 15px; width: 100%;">
+<option value="" disabled selected>Select Solution Required</option>
+    <option value="it-consulting">IT Consulting & Staffing</option>
+    <option value="healthcare-it">Healthcare IT Solutions</option>
+    <option value="cybersecurity">Cybersecurity & Compliance</option>
+    <option value="workforce-solutions">Enterprise Workforce Solutions</option>
+    <option value="offshore-dev">Offshore Development & Staffing</option>
+    <option value="ai-ml">AI & Machine Learning Solutions</option>
+    <option value="cloud-devops">Cloud & DevOps Engineering</option>
+    <option value="data-engineering">Data Engineering & Analytics</option>
+            </select>
+
+            <textarea name="message" rows="5" placeholder="How can we help you?" required style="padding:15px; border-radius:8px; border:1px solid #ccc; margin-top: 15px; width: 100%;"></textarea>
+            
+            <button type="submit" class="btn-primary" style="margin-top: 15px; width: 100%; border: none; cursor: pointer; padding: 15px;">Send Message</button>
+        </form>
+    </section>
+
+<!-- Single Footer Structure -->
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <!-- Col 1: Logo & Info -->
+        <div>
+            <a href="index.html" class="footer-logo-link">
+                <img src="/images/logo.png" alt="HatchPros Logo" class="site-logo">
+            </a>
+            <p class="footer-desc">
+                Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.
+            </p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/hatchpros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Solutions</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 3: Contact Info -->
+        <div>
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-contact-list">
+                <li><i class="fa-solid fa-phone"></i> 484-726-0232</li>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@hatchpros.net">info@hatchpros.net</a></li>
+                <li><i class="fa-solid fa-location-dot"></i> Easton, PA</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

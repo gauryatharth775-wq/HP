@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Hatch Pros Tech Talent</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Enhanced UI Scaffolding for Careers */
+        .careers-hero {
+            position: relative;
+            background: linear-gradient(135deg, #0f172a 0%, #165991 100%);
+            color: #ffffff;
+            padding: 100px 0 80px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .careers-hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: rgba(37, 99, 235, 0.2);
+            filter: blur(120px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #38bdf8;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 20px;
+        }
+
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin: 60px 0;
+        }
+
+        .perk-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 30px 20px;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .perk-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(37, 99, 235, 0.4);
+            box-shadow: 0 20px 40px -10px rgba(22, 89, 145, 0.12);
+        }
+
+        .perk-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(22, 89, 145, 0.08);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        /* Hiring Steps Timeline */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            background: rgba(248, 250, 252, 0.8);
+            border: 1px solid #e2e8f0;
+            padding: 24px;
+            border-radius: 14px;
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary);
+            background: rgba(22, 89, 145, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        /* Portal Container Enhancements */
+        .ceipal-portal-wrapper {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.04);
+            position: relative;
+        }
+
+        @media (max-width: 992px) {
+            .perks-grid, .process-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .perks-grid, .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<!-- Interactive 3D & Scroll Animation Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Scroll Reveal Engine
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .detail-card, .client-logo-card, .contact-form, .hero-text').forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        observer.observe(el);
+    });
+
+    // 2. Interactive 3D Cursor Tilt Effect for Cards
+    const cards = document.querySelectorAll('.service-card, .detail-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - (rect.width / 2);
+            const y = e.clientY - rect.top - (rect.height / 2);
+            
+            card.style.transform = `perspective(1000px) rotateX(${-y / 15}deg) rotateY(${x / 15}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
+        });
+    });
+});
+</script>
+<body>
+
+    <!-- Shared Navigation -->
+    <header class="navbar">
+   <!-- Navbar Header Logo -->
+<a href="index.html" class="navbar-brand">
+    <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
+</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Solutions</a></li>
+            <li><a href="careers.html" class="active">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-btn">Partner With Us</a>
+    </header>
+
+    <!-- 1. High-Impact Careers Hero -->
+    <section class="careers-hero">
+        <div class="careers-hero-glow"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <span class="hero-pill-badge">
+                <i class="fa-solid fa-sparkles"></i> Join Enterprise Innovation
+            </span>
+            <h1 style="font-size: 48px; font-weight: 800; letter-spacing: -1px; margin-bottom: 18px;">Build Your Future With Fortune Leaders</h1>
+            <p style="font-size: 18px; color: #cbd5e1; max-width: 700px; margin: 0 auto 30px;">Discover high-impact contract, W2, and permanent tech placements with top enterprise organizations across North America.</p>
+            
+            <!-- Quick Stat Bar -->
+            <div style="display: flex; justify-content: center; gap: 40px; margin-top: 30px;">
+                <div>
+                    <h4 style="font-size: 28px; font-weight: 800; color: #ffffff;">100%</h4>
+                    <p style="font-size: 13px; color: #94a3b8;">E-Verify Verified</p>
+                </div>
+                <div style="width: 1px; background: rgba(255,255,255,0.15);"></div>
+                <div>
+                    <h4 style="font-size: 28px; font-weight: 800; color: #ffffff;">48 hrs</h4>
+                    <p style="font-size: 13px; color: #94a3b8;">Avg. Interview Feedback</p>
+                </div>
+                <div style="width: 1px; background: rgba(255,255,255,0.15);"></div>
+                <div>
+                    <h4 style="font-size: 28px; font-weight: 800; color: #ffffff;">Top Tier</h4>
+                    <p style="font-size: 13px; color: #94a3b8;">Enterprise Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Candidate Benefits & Perks Grid -->
+    <section style="padding: 60px 0 20px;">
+        <div class="container">
+            <div style="text-align: center; max-width: 650px; margin: 0 auto;">
+                <span style="color: var(--primary); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;">WHY WORK WITH US</span>
+                <h2 style="font-size: 32px; font-weight: 800; margin-top: 8px;">The Hatch Pros Candidate Experience</h2>
+            </div>
+
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Fortune Projects</h3>
+                    <p style="font-size: 14px; color: var(--text-muted);">Access exclusive engineering, cloud, and healthcare IT roles not posted on public boards.</p>
+                </div>
+
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Competitive Compensation</h3>
+                    <p style="font-size: 14px; color: var(--text-muted);">Market-leading hourly rates, prompt payroll cycles, and transparent billing setups.</p>
+                </div>
+
+ <div class="perk-card">
+    <!-- Icon fixed with fa-shield-halved -->
+    <div class="perk-icon"><i class="fa-solid fa-shield-halved"></i></div>
+    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Compliance Assured</h3>
+    <p style="font-size: 14px; color: var(--text-muted);">Seamless onboarding, W2 support, background check assistance, and full visa guidance.</p>
+</div>
+                
+
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Dedicated Recruiter</h3>
+                    <p style="font-size: 14px; color: var(--text-muted);">A single technical talent specialist guides you from submission through deployment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Embedded Ceipal Job Portal -->
+    <section id="open-jobs" style="padding: 40px 0 80px;">
+        <div class="container">
+            <div style="text-align: center; max-width: 650px; margin: 0 auto 40px;">
+                <span style="color: var(--primary); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;">CURRENT OPENINGS</span>
+                <h2 style="font-size: 32px; font-weight: 800; margin-top: 8px;">Explore Live Positions</h2>
+            </div>
+
+            <div class="ceipal-portal-wrapper">
+                <script type="text/javascript" src="https://jobsapi.ceipal.com/APISource/widget.js" data-ceipal-api-key="ZXByVXBOOCtFSWJXWVgwREU2VVAwUT09" data-ceipal-career-portal-id="Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09"></script>
+                <div id="example-widget-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Hiring Process Walkthrough -->
+    <section style="background-color: var(--bg-light); padding: 80px 0; border-top: 1px solid #e2e8f0;">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
+                <span style="color: var(--primary); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;">TRANSPARENT PROCESS</span>
+                <h2 style="font-size: 30px; font-weight: 800; margin-top: 8px;">How We Deploy You</h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="step-card">
+                    <span class="step-number">STEP 01</span>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Application Review</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">Apply online or send your resume directly. Our recruiters evaluate tech match within 24h.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-number">STEP 02</span>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Tech Screening</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">A quick chat with a domain specialist to verify skills, experience, and rate requirements.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-number">STEP 03</span>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Client Interview</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">Direct introduction with engineering managers or healthcare system leaders.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-number">STEP 04</span>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Onboarding & Support</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">Background checks, compliance clearance, and ongoing account support throughout your project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Ceipal Script Container -->
+    <div class="ceipal-jobs-wrapper" id="ceipal-job-container">
+        <script type="text/javascript" src="https://jobsapi.ceipal.com/APISource/widget.js" data-ceipal-api-key="ZXByVXBOOCtFSWJXWVgwREU2VVAwUT09" data-ceipal-career-portal-id="Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09"></script><div id="example-widget-container"></div>
+
+    </div>
+        </div>
+    </section>
+
+<!-- Clean Single Footer Structure -->
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <!-- Col 1: Logo & Info -->
+        <div>
+            <a href="index.html" class="footer-logo-link">
+                <!-- Relative path '../logo.png' agar subfolder me ho, varna 'logo.png' -->
+                <img src="/images/logo.png" alt="HatchPros Logo" class="site-logo">
+            </a>
+            <p class="footer-desc">
+                Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.
+            </p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/hatchpros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Solutions</a></li>
+                <li><a href="index.html#jobs">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 3: Contact Info -->
+        <div>
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-contact-list">
+                <li><i class="fa-solid fa-phone"></i> 484-726-0232</li>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@hatchpros.net">info@hatchpros.net</a></li>
+                <li><i class="fa-solid fa-location-dot"></i> Easton, PA</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
