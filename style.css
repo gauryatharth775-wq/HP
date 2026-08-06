@@ -854,6 +854,29 @@ footer + footer {
         padding: 8px 12px !important;
         font-size: 12px !important;
     }
+    @media screen and (max-width: 768px) {
+    /* Target cards container to stack vertically */
+    .services-grid, 
+    .features-grid,
+    div[class*="grid"],
+    div[class*="cards"] {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+
+    /* Make cards take full available width */
+    .service-card, 
+    .feature-card, 
+    div[class*="card"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 24px 20px !important;
+    }
+}
 
     .visual-img {
         height: 180px !important;
