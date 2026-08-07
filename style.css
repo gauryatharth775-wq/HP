@@ -441,144 +441,62 @@ footer, .site-footer {
     transform: translateY(0);
 }
 
-/* Tablet Responsiveness */
-@media (max-width: 992px) {
-    .clients-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .hero-buttons {
-        justify-content: center;
-    }
-}
+/* ==========================================
+   DESKTOP DEFAULT LAYOUTS (Desktop Baseline)
+   ========================================== */
 
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 10px;
-        gap: 12px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px 15px;
-    }
-
-    .hero-text h1 {
-        font-size: 28px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .services-grid, .detail-card {
-        grid-template-columns: 1fr;
-    }
-
-    .clients-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-.hero-container > *, 
-.services-grid > *, 
-.detail-card > * {
-    min-width: 0;
-}
-/* ALL MOBILE OVERFLOW FIXES */
-
-/* 1. Global Screen Guard */
-html, body {
+/* 1. Feature Cards Section (Pic 1 & 3) - 3 Columns in Row */
+.features-grid,
+.services-grid,
+.why-choose-us-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 25px !important;
     width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-}
-
-/* 2. Responsive Container & Grids */
-.container {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-}
-
-/* Fix Cards and Grid Rows horizontally escaping screen */
-.services-grid, 
-.clients-grid, 
-.footer-grid, 
-.stats-grid,
-.features-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 20px !important;
-}
-
-/* Fix Card Layout Stretch */
-.service-card, 
-.client-logo-card, 
-.detail-card, 
-.feature-card,
-.card {
-    width: 100% !important;
-    max-width: 100% !important;
     box-sizing: border-box !important;
 }
 
-/* 3. Mobile Navigation Fix */
+/* 2. Footer Section (Pic 2) - Side-by-Side Horizontal Columns */
+footer .footer-grid,
+.site-footer .footer-grid {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1.2fr !important; /* Brand | Quick Links | Contact */
+    gap: 30px !important;
+    width: 100% !important;
+    align-items: start !important;
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE OVERRIDES (max-width: 768px)
+   ========================================== */
 @media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 15px 10px !important;
-        gap: 12px !important;
-        width: 100% !important;
+    
+    /* FIX 1: Feature Cards mobile par EK KE NEECHE EK stacked honge */
+    .features-grid,
+    .services-grid,
+    .why-choose-us-grid {
+        grid-template-columns: 1fr !important; /* Stack vertically on mobile */
+        gap: 20px !important;
     }
 
-    .nav-links {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 10px 15px !important;
-        padding: 0 !important;
-        width: 100% !important;
+    /* FIX 2: Footer mobile par BHI side-ways (2 columns) hi rahega */
+    footer .footer-grid,
+    .site-footer .footer-grid {
+        grid-template-columns: 1.2fr 1fr !important; /* Left & Right split */
+        gap: 20px 15px !important;
     }
 
-    /* 4. Fix Dark Hero / Stats Banners */
-    .hero, .page-header, .stats-section, .contact-hero {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        box-sizing: border-box !important;
+    /* Footer Brand description top par full width stretch hoga */
+    .footer-grid > div:first-child {
+        grid-column: 1 / -1 !important; /* First block takes full top row */
     }
 
-    /* 5. Form Input Overflows */
-    form, input, select, textarea {
-        max-width: 100% !important;
+    /* Ensure text & inputs stay inside mobile screen bounds */
+    .feature-card,
+    .service-card,
+    .footer-grid > div {
         width: 100% !important;
         box-sizing: border-box !important;
-    }
-
-    /* 6. Text Wrapping */
-    h1, h2, h3, p {
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
     }
 }
