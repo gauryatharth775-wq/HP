@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
 :root {
     --primary: #165991;
     --primary-dark: #0f3c63;
@@ -8,14 +9,17 @@
     --white: #ffffff;
 }
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-body {
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     background-color: var(--white);
     color: var(--text-dark);
     line-height: 1.6;
@@ -25,6 +29,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* Navbar */
@@ -38,6 +43,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 .logo-text {
@@ -78,6 +84,7 @@ body {
     z-index: 1;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
 }
 
 /* Page Header Banner */
@@ -130,6 +137,7 @@ body {
     display: flex;
     gap: 15px;
     margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -175,10 +183,13 @@ body {
     background: var(--bg-light);
 }
 
-.services-grid {
+.services-grid,
+.features-grid,
+.why-choose-us-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    width: 100%;
 }
 
 .service-card {
@@ -346,7 +357,7 @@ footer, .site-footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1.2fr 1fr;
+    grid-template-columns: 2fr 1fr 1.2fr;
     gap: 50px;
     padding-bottom: 50px;
 }
@@ -442,61 +453,98 @@ footer, .site-footer {
 }
 
 /* ==========================================
-   DESKTOP DEFAULT LAYOUTS (Desktop Baseline)
+   MOBILE RESPONSIVE OVERRIDES (max-width: 992px & 768px)
    ========================================== */
 
-/* 1. Feature Cards Section (Pic 1 & 3) - 3 Columns in Row */
-.features-grid,
-.services-grid,
-.why-choose-us-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 25px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-}
-
-/* 2. Footer Section (Pic 2) - Side-by-Side Horizontal Columns */
-footer .footer-grid,
-.site-footer .footer-grid {
-    display: grid !important;
-    grid-template-columns: 2fr 1fr 1.2fr !important; /* Brand | Quick Links | Contact */
-    gap: 30px !important;
-    width: 100% !important;
-    align-items: start !important;
-}
-
-
-/* ==========================================
-   MOBILE RESPONSIVE OVERRIDES (max-width: 768px)
-   ========================================== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
     
-    /* FIX 1: Feature Cards mobile par EK KE NEECHE EK stacked honge */
+    .nav-links {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Navbar Wrap Fix */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        gap: 12px;
+    }
+
+    .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+        justify-content: flex-start;
+        gap: 18px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    /* Hero Text Adjustment */
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Grids Stack Vertically */
     .features-grid,
     .services-grid,
     .why-choose-us-grid {
-        grid-template-columns: 1fr !important; /* Stack vertically on mobile */
+        grid-template-columns: 1fr !important;
         gap: 20px !important;
     }
 
-    /* FIX 2: Footer mobile par BHI side-ways (2 columns) hi rahega */
+    .detail-card {
+        grid-template-columns: 1fr;
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    /* Footer Responsive */
+    .footer-grid,
     footer .footer-grid,
     .site-footer .footer-grid {
-        grid-template-columns: 1.2fr 1fr !important; /* Left & Right split */
-        gap: 20px 15px !important;
-    }
-
-    /* Footer Brand description top par full width stretch hoga */
-    .footer-grid > div:first-child {
-        grid-column: 1 / -1 !important; /* First block takes full top row */
-    }
-
-    /* Ensure text & inputs stay inside mobile screen bounds */
-    .feature-card,
-    .service-card,
-    .footer-grid > div {
-        width: 100% !important;
-        box-sizing: border-box !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
     }
 }
