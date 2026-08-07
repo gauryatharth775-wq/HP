@@ -143,110 +143,53 @@
         </div>
     </section>
 
-    <!-- Global Footer -->
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-col brand-col">
-                <a href="index.html" class="footer-logo-link">
-                    <img src="images/logo.png" alt="HatchPros Logo" class="footer-logo-img">
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-col brand-col">
+            <a href="index.html" class="footer-logo-link">
+                <img src="images/logo.png" alt="HatchPros Logo" class="footer-logo-img">
+            </a>
+            <p class="footer-desc">Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/hatchpros" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in" style="font-size: 18px; color: #165991;"></i>
                 </a>
-                <p class="footer-desc">Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.</p>
-                <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/hatchpros" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in" style="font-size: 18px; color: #165991;"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Solutions</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">Contact Us</h4>
-                <ul class="footer-contact-list">
-                    <li>
-                        <i class="fa-solid fa-phone" style="color:#165991;"></i>
-                        <a href="tel:4847260232">484 726 0232</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-envelope" style="color:#165991;"></i>
-                        <a href="mailto:Info@hatchpros.net">Info@hatchpros.net</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-location-dot" style="color:#165991;"></i>
-                        <span>Easton, PA, USA</span>
-                    </li>
-                </ul>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="container footer-bottom-flex">
-                <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
-            </div>
+        <div class="footer-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Solutions</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
         </div>
-    </footer>
 
-    <!-- Interactive Animation Scripts -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1 });
+        <div class="footer-col">
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-contact-list">
+                <li>
+                    <i class="fa-solid fa-phone" style="color:#165991;"></i>
+                    <a href="tel:4847260232">484 726 0232</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope" style="color:#165991;"></i>
+                    <a href="mailto:Info@hatchpros.net">Info@hatchpros.net</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-location-dot" style="color:#165991;"></i>
+                    <span>Easton, PA, USA</span>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-            document.querySelectorAll('.service-card, .detail-card, .client-logo-card, .hero-text').forEach(el => {
-                el.classList.add('reveal-on-scroll');
-                observer.observe(el);
-            });
-
-            const counters = document.querySelectorAll('.counter');
-            const duration = 2000;
-
-            const animateCounter = (counter) => {
-                const target = +counter.getAttribute('data-target');
-                const startTime = performance.now();
-
-                const updateCount = (currentTime) => {
-                    const elapsedTime = currentTime - startTime;
-                    const progress = Math.min(elapsedTime / duration, 1);
-                    const easeOutQuad = 1 - Math.pow(1 - progress, 3);
-                    const currentCount = Math.floor(easeOutQuad * target);
-
-                    counter.innerText = currentCount;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-
-                requestAnimationFrame(updateCount);
-            };
-
-            const counterObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.4 });
-
-            counters.forEach(counter => counterObserver.observe(counter));
-        });
-    </script>
-</body>
-</html>
+    <div class="footer-bottom">
+        <div class="container footer-bottom-flex">
+            <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
+        </div>
+    </div>
+</footer>

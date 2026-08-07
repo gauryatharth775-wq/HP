@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hatch Pros | Contact Us</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -94,24 +94,21 @@ document.addEventListener("DOMContentLoaded", () => {
         </form>
     </section>
 
-<!-- Single Footer Structure -->
 <footer class="site-footer">
     <div class="container footer-grid">
-        <!-- Col 1: Logo & Info -->
-        <div>
+        <div class="footer-col brand-col">
             <a href="index.html" class="footer-logo-link">
-                <img src="/images/logo.png" alt="HatchPros Logo" class="site-logo">
+                <img src="images/logo.png" alt="HatchPros Logo" class="footer-logo-img">
             </a>
-            <p class="footer-desc">
-                Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.
-            </p>
+            <p class="footer-desc">Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.</p>
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/hatchpros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/company/hatchpros" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in" style="font-size: 18px; color: #165991;"></i>
+                </a>
             </div>
         </div>
 
-        <!-- Col 2: Navigation Links -->
-        <div>
+        <div class="footer-col">
             <h4 class="footer-heading">Quick Links</h4>
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
@@ -122,24 +119,28 @@ document.addEventListener("DOMContentLoaded", () => {
             </ul>
         </div>
 
-        <!-- Col 3: Contact Info -->
-        <div>
+        <div class="footer-col">
             <h4 class="footer-heading">Contact Us</h4>
             <ul class="footer-contact-list">
-                <li><i class="fa-solid fa-phone"></i> 484-726-0232</li>
-                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@hatchpros.net">info@hatchpros.net</a></li>
-                <li><i class="fa-solid fa-location-dot"></i> Easton, PA</li>
+                <li>
+                    <i class="fa-solid fa-phone" style="color:#165991;"></i>
+                    <a href="tel:4847260232">484 726 0232</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope" style="color:#165991;"></i>
+                    <a href="mailto:Info@hatchpros.net">Info@hatchpros.net</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-location-dot" style="color:#165991;"></i>
+                    <span>Easton, PA, USA</span>
+                </li>
             </ul>
         </div>
     </div>
 
-    <!-- Bottom Copyright Bar -->
     <div class="footer-bottom">
-        <div class="container">
+        <div class="container footer-bottom-flex">
             <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
         </div>
     </div>
 </footer>
-
-</body>
-</html>
