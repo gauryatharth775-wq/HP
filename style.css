@@ -500,3 +500,16 @@ footer .footer-grid,
         box-sizing: border-box !important;
     }
 }
+/* Force Footer Columns Side-by-Side */
+.footer-grid {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr !important; /* Brand | Quick Links | Contact */
+    align-items: start !important;
+    gap: 30px !important;
+}
+
+/* Ensure child divs don't take full width */
+.footer-grid > div {
+    width: 100% !important;
+    display: block !important;
+}
