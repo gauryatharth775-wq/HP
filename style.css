@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
 :root {
     --primary: #165991;
     --primary-dark: #0f3c63;
@@ -495,4 +496,89 @@ footer, .site-footer {
         gap: 30px;
     }
 }
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+.hero-container > *, 
+.services-grid > *, 
+.detail-card > * {
+    min-width: 0;
+}
+/* ALL MOBILE OVERFLOW FIXES */
+
+/* 1. Global Screen Guard */
+html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+/* 2. Responsive Container & Grids */
+.container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/* Fix Cards and Grid Rows horizontally escaping screen */
+.services-grid, 
+.clients-grid, 
+.footer-grid, 
+.stats-grid,
+.features-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 20px !important;
+}
+
+/* Fix Card Layout Stretch */
+.service-card, 
+.client-logo-card, 
+.detail-card, 
+.feature-card,
+.card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. Mobile Navigation Fix */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 15px 10px !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px 15px !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* 4. Fix Dark Hero / Stats Banners */
+    .hero, .page-header, .stats-section, .contact-hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 5. Form Input Overflows */
+    form, input, select, textarea {
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 6. Text Wrapping */
+    h1, h2, h3, p {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+}
