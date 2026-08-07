@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hatch Pros | Contact Us</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<!-- Interactive 3D & Scroll Animation Script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Scroll Reveal Engine
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -25,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el);
     });
 
-    // 2. Interactive 3D Cursor Tilt Effect for Cards
     const cards = document.querySelectorAll('.service-card, .detail-card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -46,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Shared Navigation -->
     <header class="navbar">
-        <!-- Navbar Header Logo -->
         <a href="index.html" class="navbar-brand">
             <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
         </a>
@@ -77,15 +73,15 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
 
             <select name="service" required style="padding:15px; border-radius:8px; border:1px solid #ccc; margin-top: 15px; width: 100%;">
-<option value="" disabled selected>Select Solution Required</option>
-    <option value="it-consulting">IT Consulting & Staffing</option>
-    <option value="healthcare-it">Healthcare IT Solutions</option>
-    <option value="cybersecurity">Cybersecurity & Compliance</option>
-    <option value="workforce-solutions">Enterprise Workforce Solutions</option>
-    <option value="offshore-dev">Offshore Development & Staffing</option>
-    <option value="ai-ml">AI & Machine Learning Solutions</option>
-    <option value="cloud-devops">Cloud & DevOps Engineering</option>
-    <option value="data-engineering">Data Engineering & Analytics</option>
+                <option value="" disabled selected>Select Solution Required</option>
+                <option value="it-consulting">IT Consulting & Staffing</option>
+                <option value="healthcare-it">Healthcare IT Solutions</option>
+                <option value="cybersecurity">Cybersecurity & Compliance</option>
+                <option value="workforce-solutions">Enterprise Workforce Solutions</option>
+                <option value="offshore-dev">Offshore Development & Staffing</option>
+                <option value="ai-ml">AI & Machine Learning Solutions</option>
+                <option value="cloud-devops">Cloud & DevOps Engineering</option>
+                <option value="data-engineering">Data Engineering & Analytics</option>
             </select>
 
             <textarea name="message" rows="5" placeholder="How can we help you?" required style="padding:15px; border-radius:8px; border:1px solid #ccc; margin-top: 15px; width: 100%;"></textarea>
@@ -94,53 +90,47 @@ document.addEventListener("DOMContentLoaded", () => {
         </form>
     </section>
 
-<footer class="site-footer">
-    <div class="container footer-grid">
-        <div class="footer-col brand-col">
-            <a href="index.html" class="footer-logo-link">
-                <img src="images/logo.png" alt="HatchPros Logo" class="footer-logo-img">
-            </a>
-            <p class="footer-desc">Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.</p>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/hatchpros" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in" style="font-size: 18px; color: #165991;"></i>
+    <!-- Footer Structure -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="index.html" class="footer-logo-link">
+                    <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
                 </a>
+                <p class="footer-desc">
+                    Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/company/hatchpros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Solutions</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-phone"></i> 484-726-0232</li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@hatchpros.net">info@hatchpros.net</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i> Easton, PA</li>
+                </ul>
             </div>
         </div>
 
-        <div class="footer-col">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Solutions</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
+            </div>
         </div>
-
-        <div class="footer-col">
-            <h4 class="footer-heading">Contact Us</h4>
-            <ul class="footer-contact-list">
-                <li>
-                    <i class="fa-solid fa-phone" style="color:#165991;"></i>
-                    <a href="tel:4847260232">484 726 0232</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-envelope" style="color:#165991;"></i>
-                    <a href="mailto:Info@hatchpros.net">Info@hatchpros.net</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-location-dot" style="color:#165991;"></i>
-                    <span>Easton, PA, USA</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container footer-bottom-flex">
-            <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
+</body>
+</html>

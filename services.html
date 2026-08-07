@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enterprise Solutions & IT Services | Hatch Pros</title>
     <!-- Font Awesome Icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Shared Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Solutions Deep-Dive UI Enhancements */
         .solutions-hero {
             background: linear-gradient(135deg, #0f172a 0%, #165991 100%);
             color: #ffffff;
@@ -33,10 +32,9 @@
             margin-bottom: 15px;
         }
 
-        /* Sticky Filter / Navigation Bar */
         .solutions-nav-bar {
             position: sticky;
-            top: 73px; /* Sits below header */
+            top: 73px;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #e2e8f0;
@@ -70,7 +68,6 @@
             color: #ffffff;
         }
 
-        /* Detailed Solution Block Layout */
         .solution-block {
             padding: 80px 0;
             border-bottom: 1px solid #e2e8f0;
@@ -129,7 +126,6 @@
             font-size: 15px;
         }
 
-        /* Tech Visual Showcase Box */
         .solution-card-visual {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -174,10 +170,8 @@
         }
     </style>
 </head>
-<!-- Interactive 3D & Scroll Animation Script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Scroll Reveal Engine
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -191,7 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el);
     });
 
-    // 2. Interactive 3D Cursor Tilt Effect for Cards
     const cards = document.querySelectorAll('.service-card, .detail-card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -212,10 +205,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Shared Navigation -->
     <header class="navbar">
-        <!-- Navbar Header Logo -->
-<a href="index.html" class="navbar-brand">
-    <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
-</a>
+        <a href="index.html" class="navbar-brand">
+            <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
+        </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -390,220 +382,57 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>
     </section>
-    <!-- Solution Section 5: Offshore Development & Staffing -->
-    <section id="offshore-dev" class="solution-block">
-        <div class="container">
-            <div class="solution-grid">
-                <div>
-                    <span class="solution-badge"><i class="fa-solid fa-globe"></i> GLOBAL TALENT HUBS</span>
-                    <h2 class="solution-title">Offshore Development & Staffing</h2>
-                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Scale your software development speed with dedicated offshore engineering teams, delivering high-performance tech talent at optimized operational costs.</p>
-                    
-                    <ul class="feature-checklist">
-                        <li><i class="fa-solid fa-circle-check"></i> Dedicated Engineering Pods</li>
-                        <li><i class="fa-solid fa-circle-check"></i> 24/7 Continuous Productivity</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Seamless Time-Zone Overlap</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Full IP Protection & Audits</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Cross-border Compliance</li>
-                        <li><i class="fa-solid fa-circle-check"></i> On-Demand Team Scaling</li>
-                    </ul>
-
-                    <a href="contact.html" class="btn-primary">Get Offshore Talent <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-                </div>
-
-                <div class="solution-card-visual">
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Offshore Development" class="visual-img">
-                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Offshore Capabilities & Delivery:</h4>
-                    <div class="tech-tags">
-                        <span class="tech-pill">Global Delivery</span>
-                        <span class="tech-pill">Dedicated Pods</span>
-                        <span class="tech-pill">Cost Efficiency</span>
-                        <span class="tech-pill">Agile Integration</span>
-                        <span class="tech-pill">24/7 Coverage</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section 6: AI & Machine Learning Solutions -->
-    <section id="ai-ml" class="solution-block">
-        <div class="container">
-            <div class="solution-grid">
-                <div class="solution-card-visual">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="AI & ML Solutions" class="visual-img">
-                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">AI Frameworks Deployed:</h4>
-                    <div class="tech-tags">
-                        <span class="tech-pill">Python</span>
-                        <span class="tech-pill">PyTorch</span>
-                        <span class="tech-pill">TensorFlow</span>
-                        <span class="tech-pill">OpenAI / LLMs</span>
-                        <span class="tech-pill">LangChain</span>
-                        <span class="tech-pill">Pinecone</span>
-                    </div>
-                </div>
-
-                <div>
-                    <span class="solution-badge"><i class="fa-solid fa-brain"></i> ADVANCED AI & INTELLIGENCE</span>
-                    <h2 class="solution-title">AI & Machine Learning Solutions</h2>
-                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Empower your enterprise with custom AI workflows, predictive data analytics, Generative AI integration, and automated intelligent business execution.</p>
-                    
-                    <ul class="feature-checklist">
-                        <li><i class="fa-solid fa-circle-check"></i> Custom GenAI & LLM Integration</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Predictive Business Analytics</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Automated AI Workflow Agents</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Natural Language Processing</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Computer Vision Models</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Enterprise AI Governance</li>
-                    </ul>
-
-                    <a href="contact.html" class="btn-primary">Explore AI Solutions <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section 7: Cloud & DevOps Engineering -->
-    <section id="cloud-devops" class="solution-block">
-        <div class="container">
-            <div class="solution-grid">
-                <div>
-                    <span class="solution-badge"><i class="fa-solid fa-cloud"></i> CLOUD & INFRASTRUCTURE</span>
-                    <h2 class="solution-title">Cloud & DevOps Engineering</h2>
-                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Seamless AWS/Azure cloud migration, CI/CD pipeline automation, and scalable infrastructure management engineered for zero downtime and security.</p>
-                    
-                    <ul class="feature-checklist">
-                        <li><i class="fa-solid fa-circle-check"></i> Cloud Migration & Modernization</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Automated CI/CD Pipelines</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Infrastructure as Code (IaC)</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Container Orchestration</li>
-                        <li><i class="fa-solid fa-circle-check"></i> 24/7 Site Reliability (SRE)</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Cost Optimization (FinOps)</li>
-                    </ul>
-
-                    <a href="contact.html" class="btn-primary">Optimize Cloud Infra <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-                </div>
-
-                <div class="solution-card-visual">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Cloud Infrastructure" class="visual-img">
-                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Cloud Tools & Tech Stack:</h4>
-                    <div class="tech-tags">
-                        <span class="tech-pill">AWS</span>
-                        <span class="tech-pill">Microsoft Azure</span>
-                        <span class="tech-pill">Docker</span>
-                        <span class="tech-pill">Kubernetes</span>
-                        <span class="tech-pill">Terraform</span>
-                        <span class="tech-pill">Jenkins</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section 8: Data Engineering & Analytics -->
-    <section id="data-engineering" class="solution-block">
-        <div class="container">
-            <div class="solution-grid">
-                <div class="solution-card-visual">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Analytics" class="visual-img">
-                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Data Platforms We Support:</h4>
-                    <div class="tech-tags">
-                        <span class="tech-pill">Snowflake</span>
-                        <span class="tech-pill">Databricks</span>
-                        <span class="tech-pill">Apache Spark</span>
-                        <span class="tech-pill">Power BI</span>
-                        <span class="tech-pill">dbt</span>
-                        <span class="tech-pill">PostgreSQL</span>
-                    </div>
-                </div>
-
-                <div>
-                    <span class="solution-badge"><i class="fa-solid fa-database"></i> BIG DATA & INSIGHTS</span>
-                    <h2 class="solution-title">Data Engineering & Analytics</h2>
-                    <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">Architect modern data pipelines, centralized data warehouses, and real-time analytics platforms to transform raw data into actionable enterprise insights.</p>
-                    
-                    <ul class="feature-checklist">
-                        <li><i class="fa-solid fa-circle-check"></i> Enterprise Data Warehousing</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Real-time ETL/ELT Pipelines</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Business Intelligence & Dashboards</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Data Governance & Quality</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Big Data Infrastructure</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Analytics Strategy</li>
-                    </ul>
-
-                    <a href="contact.html" class="btn-primary">Build Data Pipeline <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bottom CTA Banner -->
-    <section style="padding: 80px 0; background: #ffffff;">
-        <div class="container">
-            <div style="background: linear-gradient(135deg, #0f172a 0%, #165991 100%); color: #ffffff; padding: 60px 40px; border-radius: 24px; text-align: center;">
-                <h2 style="font-size: 34px; font-weight: 800; margin-bottom: 12px;">Ready to Accelerate Your Tech Stack?</h2>
-                <p style="font-size: 16px; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px;">Speak directly with our technical delivery directors to assess your engineering or healthcare IT requirements.</p>
-                <a href="contact.html" class="btn-primary" style="background: #ffffff !important; color: var(--primary) !important; padding: 15px 36px; font-size: 15px;">Book Consultation <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-        </div>
-    </section>
 
     <!-- Services Page bottom CTA to Careers -->
-<section style="text-align: center; padding: 60px 20px; background: #ffffff;">
-    <div class="container">
-        <h2>Looking to Join Our Elite Tech Team?</h2>
-        <p style="margin: 15px 0 25px; color: var(--text-muted);">We are constantly hiring top talent for enterprise IT roles.</p>
-        <a href="careers.html" class="btn-primary">Explore Careers <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-</section>
+    <section style="text-align: center; padding: 60px 20px; background: #ffffff;">
+        <div class="container">
+            <h2>Looking to Join Our Elite Tech Team?</h2>
+            <p style="margin: 15px 0 25px; color: var(--text-muted);">We are constantly hiring top talent for enterprise IT roles.</p>
+            <a href="careers.html" class="btn-primary">Explore Careers <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
 
-<footer class="site-footer">
-    <div class="container footer-grid">
-        <div class="footer-col brand-col">
-            <a href="index.html" class="footer-logo-link">
-                <img src="images/logo.png" alt="HatchPros Logo" class="footer-logo-img">
-            </a>
-            <p class="footer-desc">Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.</p>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/hatchpros" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in" style="font-size: 18px; color: #165991;"></i>
+    <!-- Clean Single Footer Structure -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="index.html" class="footer-logo-link">
+                    <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
                 </a>
+                <p class="footer-desc">
+                    Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/company/hatchpros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Solutions</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-phone"></i> 484-726-0232</li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@hatchpros.net">info@hatchpros.net</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i> Easton, PA</li>
+                </ul>
             </div>
         </div>
 
-        <div class="footer-col">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Solutions</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
+            </div>
         </div>
-
-        <div class="footer-col">
-            <h4 class="footer-heading">Contact Us</h4>
-            <ul class="footer-contact-list">
-                <li>
-                    <i class="fa-solid fa-phone" style="color:#165991;"></i>
-                    <a href="tel:4847260232">484 726 0232</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-envelope" style="color:#165991;"></i>
-                    <a href="mailto:Info@hatchpros.net">Info@hatchpros.net</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-location-dot" style="color:#165991;"></i>
-                    <span>Easton, PA, USA</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container footer-bottom-flex">
-            <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
+</body>
+</html>

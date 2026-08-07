@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers | Hatch Pros Tech Talent</title>
     <!-- Font Awesome Icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Shared Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Enhanced UI Scaffolding for Careers */
         .careers-hero {
             position: relative;
             background: linear-gradient(135deg, #0f172a 0%, #165991 100%);
@@ -85,7 +84,6 @@
             margin-bottom: 20px;
         }
 
-        /* Hiring Steps Timeline */
         .process-steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -113,7 +111,6 @@
             margin-bottom: 12px;
         }
 
-        /* Portal Container Enhancements */
         .ceipal-portal-wrapper {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -136,10 +133,8 @@
         }
     </style>
 </head>
-<!-- Interactive 3D & Scroll Animation Script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Scroll Reveal Engine
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -153,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el);
     });
 
-    // 2. Interactive 3D Cursor Tilt Effect for Cards
     const cards = document.querySelectorAll('.service-card, .detail-card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -174,10 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Shared Navigation -->
     <header class="navbar">
-   <!-- Navbar Header Logo -->
-<a href="index.html" class="navbar-brand">
-    <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
-</a>
+        <a href="index.html" class="navbar-brand">
+            <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
+        </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -188,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="contact.html" class="nav-btn">Partner With Us</a>
     </header>
 
-    <!-- 1. High-Impact Careers Hero -->
+    <!-- 1. Careers Hero -->
     <section class="careers-hero">
         <div class="careers-hero-glow"></div>
         <div class="container" style="position: relative; z-index: 1;">
@@ -198,7 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <h1 style="font-size: 48px; font-weight: 800; letter-spacing: -1px; margin-bottom: 18px;">Build Your Future With Fortune Leaders</h1>
             <p style="font-size: 18px; color: #cbd5e1; max-width: 700px; margin: 0 auto 30px;">Discover high-impact contract, W2, and permanent tech placements with top enterprise organizations across North America.</p>
             
-            <!-- Quick Stat Bar -->
             <div style="display: flex; justify-content: center; gap: 40px; margin-top: 30px;">
                 <div>
                     <h4 style="font-size: 28px; font-weight: 800; color: #ffffff;">100%</h4>
@@ -239,13 +231,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p style="font-size: 14px; color: var(--text-muted);">Market-leading hourly rates, prompt payroll cycles, and transparent billing setups.</p>
                 </div>
 
- <div class="perk-card">
-    <!-- Icon fixed with fa-shield-halved -->
-    <div class="perk-icon"><i class="fa-solid fa-shield-halved"></i></div>
-    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Compliance Assured</h3>
-    <p style="font-size: 14px; color: var(--text-muted);">Seamless onboarding, W2 support, background check assistance, and full visa guidance.</p>
-</div>
-                
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Compliance Assured</h3>
+                    <p style="font-size: 14px; color: var(--text-muted);">Seamless onboarding, W2 support, background check assistance, and full visa guidance.</p>
+                </div>
 
                 <div class="perk-card">
                     <div class="perk-icon"><i class="fa-solid fa-user-astronaut"></i></div>
@@ -307,61 +297,47 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </section>
 
-      <!-- Ceipal Script Container -->
-    <div class="ceipal-jobs-wrapper" id="ceipal-job-container">
-        <script type="text/javascript" src="https://jobsapi.ceipal.com/APISource/widget.js" data-ceipal-api-key="ZXByVXBOOCtFSWJXWVgwREU2VVAwUT09" data-ceipal-career-portal-id="Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09"></script><div id="example-widget-container"></div>
-
-    </div>
-        </div>
-    </section>
-
-<footer class="site-footer">
-    <div class="container footer-grid">
-        <div class="footer-col brand-col">
-            <a href="index.html" class="footer-logo-link">
-                <img src="images/logo.png" alt="HatchPros Logo" class="footer-logo-img">
-            </a>
-            <p class="footer-desc">Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.</p>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/hatchpros" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in" style="font-size: 18px; color: #165991;"></i>
+    <!-- Clean Single Footer Structure -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="index.html" class="footer-logo-link">
+                    <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
                 </a>
+                <p class="footer-desc">
+                    Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/company/hatchpros/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Solutions</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-phone"></i> 484-726-0232</li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@hatchpros.net">info@hatchpros.net</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i> Easton, PA</li>
+                </ul>
             </div>
         </div>
 
-        <div class="footer-col">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Solutions</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
+            </div>
         </div>
-
-        <div class="footer-col">
-            <h4 class="footer-heading">Contact Us</h4>
-            <ul class="footer-contact-list">
-                <li>
-                    <i class="fa-solid fa-phone" style="color:#165991;"></i>
-                    <a href="tel:4847260232">484 726 0232</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-envelope" style="color:#165991;"></i>
-                    <a href="mailto:Info@hatchpros.net">Info@hatchpros.net</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-location-dot" style="color:#165991;"></i>
-                    <span>Easton, PA, USA</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container footer-bottom-flex">
-            <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
+</body>
+</html>
