@@ -4,121 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hatch Pros | Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-  @media screen and (max-width: 768px) {
-    /* Heading Font Size Reduction */
-    h1, h2, .main-title {
-      font-size: 22px !important;
-      line-height: 1.2 !important;
-    }
-
-    /* Navbar Auto-wrap */
-    nav, header {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      gap: 5px !important;
-    }
-
-    nav a {
-      font-size: 13px !important;
-      padding: 2px 5px !important;
-    }
-
-    .btn, button {
-      font-size: 12px !important;
-      padding: 5px 10px !important;
-    }
-  }
-</style>
 </head>
-<!-- Interactive 3D & Scroll Animation Script -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Scroll Reveal Engine
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.service-card, .detail-card, .client-logo-card, .contact-form, .hero-text').forEach(el => {
-        el.classList.add('reveal-on-scroll');
-        observer.observe(el);
-    });
-
-    // 2. Interactive 3D Cursor Tilt Effect for Cards
-    const cards = document.querySelectorAll('.service-card, .detail-card');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left - (rect.width / 2);
-            const y = e.clientY - rect.top - (rect.height / 2);
-            
-            card.style.transform = `perspective(1000px) rotateX(${-y / 15}deg) rotateY(${x / 15}deg) translateY(-8px)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
-        });
-    });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll('.counter');
-    const duration = 2000; // 2 Seconds total animation time
-
-    const animateCounter = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        const startTime = performance.now();
-
-        const updateCount = (currentTime) => {
-            const elapsedTime = currentTime - startTime;
-            const progress = Math.min(elapsedTime / duration, 1);
-            
-            // Smooth easing curve (end me slow hone wala smooth animation)
-            const easeOutQuad = 1 - Math.pow(1 - progress, 3);
-            const currentCount = Math.floor(easeOutQuad * target);
-
-            counter.innerText = currentCount;
-
-            if (progress < 1) {
-                requestAnimationFrame(updateCount);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        requestAnimationFrame(updateCount);
-    };
-
-    // IntersectionObserver guarantees animation starts ONLY when user scrolls to this section
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                observer.unobserve(entry.target); // Runs animation once per scroll
-            }
-        });
-    }, { threshold: 0.4 });
-
-    counters.forEach(counter => observer.observe(counter));
-});
-
-</script>
 <body>
 
     <!-- Shared Navigation Bar -->
     <header class="navbar">
-        <!-- Navbar Header Logo -->
-<a href="index.html" class="navbar-brand">
-    <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
-</a>
+        <a href="index.html" class="navbar-brand">
+            <img src="images/logo.png" alt="HatchPros Logo" class="site-logo">
+        </a>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -137,16 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h1>Accelerating Innovation Through <span>Elite Tech Talent</span></h1>
                 <p>Connecting Fortune enterprise companies with world-class engineering teams, IT consulting, and workforce solutions across the USA.</p>
                 <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
-    <a href="services.html" class="btn-primary">
-        <span>View Solutions</span>
-        <i class="fa-solid fa-arrow-right icon-arrow"></i>
-    </a>
-    <a href="careers.html" class="btn-primary">
-        <i class="fa-solid fa-briefcase"></i>
-        <span>Browse Open Jobs</span>
-        <i class="fa-solid fa-arrow-right icon-arrow"></i>
-    </a>
-</div>
+                    <a href="services.html" class="btn-primary">
+                        <span>View Solutions</span>
+                        <i class="fa-solid fa-arrow-right icon-arrow"></i>
+                    </a>
+                    <a href="careers.html" class="btn-primary">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Browse Open Jobs</span>
+                        <i class="fa-solid fa-arrow-right icon-arrow"></i>
+                    </a>
+                </div>
             </div>
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Enterprise Tech">
@@ -155,156 +53,201 @@ document.addEventListener("DOMContentLoaded", () => {
     </section>
 
    <!-- Enterprise Metrics Graphic Section -->
-<section style="background: #0f172a; padding: 50px 0; color: #fff;">
-    <div class="container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;">
-        <div>
-            <h3 style="font-size: 38px; font-weight: 800; color: #38bdf8; margin-bottom: 5px; font-variant-numeric: tabular-nums;">
-                <span class="counter" data-target="98">0</span>%
-            </h3>
-            <p style="color: #94a3b8; font-size: 14px; font-weight: 600;">Client Retention Rate</p>
+    <section style="background: #0f172a; padding: 50px 0; color: #fff;">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; text-align: center;">
+            <div>
+                <h3 style="font-size: 38px; font-weight: 800; color: #38bdf8; margin-bottom: 5px; font-variant-numeric: tabular-nums;">
+                    <span class="counter" data-target="98">0</span>%
+                </h3>
+                <p style="color: #94a3b8; font-size: 14px; font-weight: 600;">Client Retention Rate</p>
+            </div>
+            <div>
+                <h3 style="font-size: 38px; font-weight: 800; color: #38bdf8; margin-bottom: 5px; font-variant-numeric: tabular-nums;">
+                    <span class="counter" data-target="500">0</span>+
+                </h3>
+                <p style="color: #94a3b8; font-size: 14px; font-weight: 600;">Tech Specialists Placed</p>
+            </div>
+            <div>
+                <h3 style="font-size: 38px; font-weight: 800; color: #38bdf8; margin-bottom: 5px; font-variant-numeric: tabular-nums;">
+                    <span class="counter" data-target="15">0</span>+
+                </h3>
+                <p style="color: #94a3b8; font-size: 14px; font-weight: 600;">Years Industry Expertise</p>
+            </div>
+            <div>
+                <h3 style="font-size: 38px; font-weight: 800; color: #38bdf8; margin-bottom: 5px;">24/7</h3>
+                <p style="color: #94a3b8; font-size: 14px; font-weight: 600;">Enterprise Support</p>
+            </div>
         </div>
-        <div>
-            <h3 style="font-size: 38px; font-weight: 800; color: #38bdf8; margin-bottom: 5px; font-variant-numeric: tabular-nums;">
-                <span class="counter" data-target="500">0</span>+
-            </h3>
-            <p style="color: #94a3b8; font-size: 14px; font-weight: 600;">Tech Specialists Placed</p>
-        </div>
-        <div>
-            <h3 style="font-size: 38px; font-weight: 800; color: #38bdf8; margin-bottom: 5px; font-variant-numeric: tabular-nums;">
-                <span class="counter" data-target="15">0</span>+
-            </h3>
-            <p style="color: #94a3b8; font-size: 14px; font-weight: 600;">Years Industry Expertise</p>
-        </div>
-        <div>
-            <h3 style="font-size: 38px; font-weight: 800; color: #38bdf8; margin-bottom: 5px;">24/7</h3>
-            <p style="color: #94a3b8; font-size: 14px; font-weight: 600;">Enterprise Support</p>
-        </div>
-    </div>
-</section>
-<!-- Process / Feature Grid -->
-<section style="padding: 80px 0; background: #ffffff;">
-    <div class="container">
-        <div style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
-            <h2 style="font-size: 32px; font-weight: 800; color: #0f172a;">Why Enterprises Choose Hatch Pros</h2>
-            <p style="color: #475569; margin-top: 10px;">End-to-end tech solutions designed for rapid execution and reliability.</p>
-        </div>
+    </section>
 
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-            <!-- Card 1 -->
-            <div style="padding: 35px 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc;">
-                <div style="width: 50px; height: 50px; background: #165991; color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px;">
-                    <i class="fa-solid fa-microchip"></i>
-                </div>
-                <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">Pre-Vetted Tech Talent</h3>
-                <p style="color: #475569; font-size: 14px; line-height: 1.6;">Rigorously screened engineers and IT consultants ready for immediate project deployment.</p>
+    <!-- Process / Feature Grid -->
+    <section style="padding: 80px 0; background: #ffffff;">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
+                <h2 style="font-size: 32px; font-weight: 800; color: #0f172a;">Why Enterprises Choose Hatch Pros</h2>
+                <p style="color: #475569; margin-top: 10px;">End-to-end tech solutions designed for rapid execution and reliability.</p>
             </div>
 
-            <!-- Card 2 -->
-            <div style="padding: 35px 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc;">
-                <div style="width: 50px; height: 50px; background: #165991; color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px;">
-                    <i class="fa-solid fa-shield-halved"></i>
+            <div class="why-choose-us-grid">
+                <div style="padding: 35px 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc;">
+                    <div style="width: 50px; height: 50px; background: #165991; color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px;">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">Pre-Vetted Tech Talent</h3>
+                    <p style="color: #475569; font-size: 14px; line-height: 1.6;">Rigorously screened engineers and IT consultants ready for immediate project deployment.</p>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">Enterprise Compliance</h3>
-                <p style="color: #475569; font-size: 14px; line-height: 1.6;">Full workforce compliance, E-Verify certification, and strict security protocol adherence.</p>
-            </div>
 
-            <!-- Card 3 -->
-            <div style="padding: 35px 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc;">
-                <div style="width: 50px; height: 50px; background: #165991; color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px;">
-                    <i class="fa-solid fa-chart-line"></i>
+                <div style="padding: 35px 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc;">
+                    <div style="width: 50px; height: 50px; background: #165991; color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px;">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">Enterprise Compliance</h3>
+                    <p style="color: #475569; font-size: 14px; line-height: 1.6;">Full workforce compliance, E-Verify certification, and strict security protocol adherence.</p>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">Scalable IT Infrastructure</h3>
-                <p style="color: #475569; font-size: 14px; line-height: 1.6;">Flexible staffing and consulting models tailored to handle high-growth tech demands.</p>
+
+                <div style="padding: 35px 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc;">
+                    <div style="width: 50px; height: 50px; background: #165991; color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">Scalable IT Infrastructure</h3>
+                    <p style="color: #475569; font-size: 14px; line-height: 1.6;">Flexible staffing and consulting models tailored to handle high-growth tech demands.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- FAQ Section -->
-<section style="padding: 70px 0; background: #f8fafc; border-top: 1px solid #e2e8f0;">
-    <div class="container" style="max-width: 800px; margin: 0 auto;">
-        <h2 style="font-size: 28px; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
-        
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-            <div style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                <h4 style="font-size: 16px; font-weight: 700; color: #0f172a;">How quickly can Hatch Pros onboard tech consultants?</h4>
-                <p style="color: #475569; font-size: 14px; margin-top: 8px;">Depending on project scope, pre-screened talent can be deployed in as little as 48 to 72 hours.</p>
-            </div>
-            
-            <div style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                <h4 style="font-size: 16px; font-weight: 700; color: #0f172a;">What industries do you specialize in?</h4>
-                <p style="color: #475569; font-size: 14px; margin-top: 8px;">We serve IT Infrastructure, Healthcare IT, Enterprise Software, and Workforce Consulting across North America.</p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 70px 0; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 28px; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <h4 style="font-size: 16px; font-weight: 700; color: #0f172a;">How quickly can Hatch Pros onboard tech consultants?</h4>
+                    <p style="color: #475569; font-size: 14px; margin-top: 8px;">Depending on project scope, pre-screened talent can be deployed in as little as 48 to 72 hours.</p>
+                </div>
+                <div style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <h4 style="font-size: 16px; font-weight: 700; color: #0f172a;">What industries do you specialize in?</h4>
+                    <p style="color: #475569; font-size: 14px; margin-top: 8px;">We serve IT Infrastructure, Healthcare IT, Enterprise Software, and Workforce Consulting across North America.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-    <!-- Bottom CTA Section before Footer -->
-<section style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 60px 20px; text-align: center; border-top: 1px solid #e2e8f0;">
-    <div class="container" style="max-width: 800px; margin: 0 auto;">
-        <h2 style="font-size: 30px; font-weight: 800; color: var(--text-dark); margin-bottom: 12px;">
-            Want to Know More About Us?
-        </h2>
-        <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 25px; line-height: 1.6;">
-            Discover our journey, company values, and how we empower enterprises with top-tier technology talent.
-        </p>
-        <a href="about.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
-            Learn About Us <i class="fa-solid fa-arrow-right"></i>
-        </a>
-    </div>
-</section>
-<!-- Enhanced Global Footer -->
-<footer class="site-footer">
-    <div class="container footer-grid">
-        
-        <!-- Column 1: Brand Info -->
-        <div class="footer-col brand-col">
-            <a href="index.html" class="footer-logo-link">
-                <img src="images/logo.png" alt="HatchPros Logo" class="footer-logo-img">
+    </section>
+
+    <!-- Bottom CTA Section -->
+    <section style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 60px 20px; text-align: center; border-top: 1px solid #e2e8f0;">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 30px; font-weight: 800; color: var(--text-dark); margin-bottom: 12px;">Want to Know More About Us?</h2>
+            <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 25px; line-height: 1.6;">Discover our journey, company values, and how we empower enterprises with top-tier technology talent.</p>
+            <a href="about.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+                <span>Learn About Us</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <p class="footer-desc">Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.</p>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/hatchpros" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="images/logo.png" alt="HatchPros Logo" class="footer-logo-img">
                 </a>
+                <p class="footer-desc">Accelerating innovation through elite tech talent, specialized IT consulting, and enterprise workforce solutions across North America.</p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/company/hatchpros" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in" style="font-size: 18px; color: #165991;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Solutions</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <i class="fa-solid fa-phone" style="color:#165991;"></i>
+                        <a href="tel:4847260232">484 726 0232</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope" style="color:#165991;"></i>
+                        <a href="mailto:Info@hatchpros.net">Info@hatchpros.net</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot" style="color:#165991;"></i>
+                        <span>Easton, PA, USA</span>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <!-- Column 2: Quick Links -->
-        <div class="footer-col">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Solutions</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
+            </div>
         </div>
+    </footer>
 
-        <!-- Column 3: Contact Us (Aapka ye column wrapper ke bahar chala gaya tha) -->
-        <div class="footer-col">
-            <h4 class="footer-heading">Contact Us</h4>
-            <ul class="footer-contact-list">
-                <li>
-                    <i class="fa-solid fa-phone"></i>
-                    <a href="tel:4847260232">484 726 0232</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:Info@hatchpros.net">Info@hatchpros.net</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Easton, PA, USA</span>
-                </li>
-            </ul>
-        </div>
+    <!-- Interactive Animation Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
 
-    </div> <!-- footer-grid yahan band hoga (Teeno columns ke BAAD) -->
+            document.querySelectorAll('.service-card, .detail-card, .client-logo-card, .hero-text').forEach(el => {
+                el.classList.add('reveal-on-scroll');
+                observer.observe(el);
+            });
 
-    <!-- Bottom Legal Bar -->
-    <div class="footer-bottom">
-        <div class="container footer-bottom-flex">
-            <p>&copy; 2026 Hatch Pros. All rights reserved. E-Verify Certified Employer.</p>
-        </div>
-    </div>
-</footer>
+            const counters = document.querySelectorAll('.counter');
+            const duration = 2000;
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const startTime = performance.now();
+
+                const updateCount = (currentTime) => {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1);
+                    const easeOutQuad = 1 - Math.pow(1 - progress, 3);
+                    const currentCount = Math.floor(easeOutQuad * target);
+
+                    counter.innerText = currentCount;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                requestAnimationFrame(updateCount);
+            };
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            counters.forEach(counter => counterObserver.observe(counter));
+        });
+    </script>
+</body>
+</html>
